@@ -1,2 +1,2 @@
 # pandas-challenge
-This repo is for pandas homework.
+Analyzed game company's sale data by using Pandas.
