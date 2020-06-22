@@ -1,5 +1,10 @@
 # Heroes of Pymoli Data Analysis
-Analyzed game company's sale data by using Python(Pandas).
+## Background
+I have given access to the data for the most recent fantasy game Heroes of Pymoli.
+
+Like many others in its genre, the game is free-to-play, but players are encouraged to purchase optional items that enhance their playing experience. As a first task, I was asked to generate a report that breaks down the game's purchasing data into meaningful insights.
+
+Purshase data was provided as csv file. It is saved [here](https://github.com/kanamoore/pandas-challenge/tree/master/Resources)
 
 ### Summary
 * While the total purchase count is 780, the number of unique players is only 573. There is a good amount of repeat purchasers for the Heroes of Pymoli game.
