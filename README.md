@@ -6,10 +6,10 @@ Like many others in its genre, the game is free-to-play, but players are encoura
 
 Purshase data was provided as csv file. It is saved [here](https://github.com/kanamoore/pandas-challenge/tree/master/Resources)
 
-### Summary
-* While the total purchase count is 780, the number of unique players is only 573. There is a good amount of repeat purchasers for the Heroes of Pymoli game.
-* The best represented age bracket in the data is 20-24 years, accounting for 45% of the entire sample. Unsurprisingly, the bracket makes up the largest portion of Total Purchase Value, but while Average Purchase Price is middle of the pack, Normalized Totals places the bracket in the lower tier of values. Players in this age bracket spend less than other age brackets on a holistic basis.
-* The list of most profitable items is led by some of the most expensive items, rather than those that were purchased the most often. Items priced lower must be purchased at a much higher rate to deliver the same value as higher priced items, and the data does not show this occurring.
+### Observable Trends
+* Out of total 573 players, the vast majority are male (84%). 
+
+* The best represented age bracket in the data is 20-24 years(45%), followed by 15-19(18.58%) and 25-29(13.37%). 
 
 ### Read data
 ```
@@ -35,6 +35,7 @@ player_count = pd.DataFrame({"Player Count":[player_count]})
 # Display the summary
 player_count
 ```
+
 
 ### Purchasing Analysis (Total)
 
@@ -70,6 +71,7 @@ purchasing_summary[["Average Price","Total Revenue"]] \
 # Display the summary
 purchasing_summary
 ```
+![GitHub Logo](Resources/Images/Purchase_Summary.PNG)
 
 ### Gender Demographics
 
