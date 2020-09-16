@@ -1,5 +1,5 @@
 # Heroes of Pymoli Data Analysis
-## Background
+### Background
 I have given access to the data for the most recent fantasy game Heroes of Pymoli.
 
 Like many others in its genre, the game is free-to-play, but players are encouraged to purchase optional items that enhance their playing experience. As a first task, I was asked to generate a report that breaks down the game's purchasing data into meaningful insights.
@@ -10,6 +10,8 @@ Purshase data was provided as csv file. It is saved [here](https://github.com/ka
 * Out of total 573 players, the vast majority are male (84%). 
 
 * The best represented age bracket in the data is 20-24 years(45%), followed by 15-19(18.58%) and 25-29(13.37%). 
+
+* Age group 20-24 spends the most money, total purchase value of $1,114.06 and average puchase of $4.32 per person. However, age group 35-39 has the highest average purchase of $4.76 per person and total purchase value of $147.67.
 
 ### Read data
 ```
