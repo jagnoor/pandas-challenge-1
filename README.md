@@ -80,7 +80,7 @@ purchasing_summary
 * Percentage and Count of Other / Non-Disclosed
 
 ```
-# To get the unique # of players(SN), remove duplicates
+# To get the unique number of players(SN), remove duplicates
 sn_unique = purchase_data.drop_duplicates(subset = "SN")
 
 # Count unique number of male, female and other players
@@ -100,6 +100,7 @@ gender_summary_df["Percentage of Players"] = gender_summary_df["Percentage of Pl
 # Display the summary
 gender_summary_df
 ```
+![GitHub Logo](Resources/Images/Gender_Details.PNG)
 
 ### Purchasing Analysis (Gender)
 
@@ -136,6 +137,7 @@ purchase_summary_df[["Average Purchase Price","Total Purchase Value","Avg Total 
 # Show the summary
 purchase_summary_df
 ```
+![GitHub Logo](Resources/Images/Purchase_Data_By_Gender.PNG)
 
 ### Age Demographics
 
@@ -174,6 +176,48 @@ age_summary_df["Percentage of Players"] = age_summary_df["Percentage of Players"
 # Show the summary
 age_summary_df
 ```
+![GitHub Logo](Resources/Images/Age_Demographics.PNG)
+
+### Purchasing Analysis (Age)
+    * Bin the purchase_data data frame by age
+    * Run basic calculations to obtain purchase count, avg. purchase price, avg. purchase total per person etc. in the table below
+    * Create a summary data frame to hold the results
+    
+```
+# Categorize the existing players using the age bins. 
+purchase_data["Age Ranges"] = pd.cut(purchase_data["Age"], bins, labels = age_group)
+purchase_age_count = purchase_data["Age Ranges"].value_counts()
+
+# Calculate average purchase price by age
+average_price = purchase_data.groupby("Age Ranges")["Price"].mean()
+
+# Calculate total purchase value by age
+total_purchase_age = purchase_data.groupby("Age Ranges")["Price"].sum()
+
+# Calculate average total purchase per person
+average_purchase_age = total_purchase_age / purchase_count_age
+```
+```
+# Create summary
+purchase_summary_age = pd.DataFrame({"Purchase Count" : purchase_age_count,
+                                     "Average Purchase Price" : average_price,
+                                     "Total Purchase Value" : total_purchase_age,
+                                     "Avg Total Purchase per Person" : average_purchase_age})
+
+
+# Change the format to currency
+purchase_summary_age[["Average Purchase Price","Total Purchase Value","Avg Total Purchase per Person"]] \
+= purchase_summary_age[["Average Purchase Price","Total Purchase Value","Avg Total Purchase per Person"]] \
+.applymap("${:.2f}".format) 
+
+# Rename the axis to show data label "Age Ranges"
+purchase_summary_age = purchase_summary_age.rename_axis("Age Ranges")
+
+# Display the summary 
+purchase_summary_age
+```
+
+![GitHub Logo](Resources/Images/Purchase_Analysis_Age.PNG)
 
 ### Top Spenders
 
@@ -208,6 +252,7 @@ user_summary[["Average Purchase Price","Total Purchase Value"]] \
 # Display the summary
 user_summary.head()
 ```
+![GitHub Logo](Resources/Images/Top_Spender.PNG)
 
 ### Most Popular Items
 
@@ -246,6 +291,7 @@ item_summary[["Item Price", "Total Purchase Value"]] \
 # Display the summary
 item_summary.head()
 ```
+![GitHub Logo](Resources/Images/Most_Popular_Items.PNG)
 
 ### Most Profitable Items
 
@@ -264,6 +310,6 @@ highest_purchase_value[["Item Price", "Total Purchase Value"]] \
 # Show the result
 highest_purchase_value.head()
 ```
-
+![GitHub Logo](Resources/Images/Most_Profitable_Item.PNG)
 
 
